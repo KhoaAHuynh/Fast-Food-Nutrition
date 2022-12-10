@@ -1,0 +1,35 @@
+1. Find a product/products with the common name chicken from BOTH tables
+SELECT BurgerKing.Product as BKP, McDonalds.Product as MDP
+FROM BurgerKing
+INNER JOIN McDonalds
+WHERE BKP LIKE '%Chicken'
+AND MDP LIKE '%Chicken'
+
+2. Find the top ten products with the highest cholesterol from McDonalds
+SELECT Product, Cholesterol
+FROM McDonalds
+ORDER BY Cholesterol desc
+LIMIT 10;
+
+3. Find the item with the most amount of protein from Burger King
+SELECT Product, Protein
+FROM BurgerKing
+ORDER BY Protein desc
+LIMIT 10
+
+4. Find the item with the most amount of carbs from both tables
+SELECT BurgerKing.Product as BKP, McDonalds.Product as MDP, max(BurgerKing.Carbs) as BKC, max(McDonalds.Carbs) as MDC
+FROM BurgerKing
+INNER JOIN McDonalds
+
+5. Find Products with the most amount of Sugar from McDonalds
+SELECT Product, Sugar
+FROM McDonalds
+Order BY Sugar DESC
+LIMIT 20;
+
+6. Find products from BOTH tables where the sugar is more than 50 grams
+SELECT BurgerKing.Product as BKP, BurgerKing.Sugar as BKS, McDonalds.Product as MDP, McDonalds.Sugar as MDS
+FROM BurgerKing
+JOIN McDonalds
+WHERE BKS AND MDS > 50;
